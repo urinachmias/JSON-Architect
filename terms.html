@@ -7,196 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --bg: #0a0a0c;
-    --bg-elevated: #111115;
-    --bg-card: #16161b;
-    --surface: #1c1c23;
-    --border: #2a2a35;
-    --border-subtle: #1f1f28;
-    --text: #e8e6f0;
-    --text-secondary: #8b89a0;
-    --text-muted: #5c5a6e;
-    --accent: #7c6aff;
-    --accent-bright: #9580ff;
-    --accent-glow: rgba(124, 106, 255, 0.15);
-    --green: #3dd68c;
-    --teal: #5ec4c8;
-    --font-display: 'Outfit', sans-serif;
-    --font-mono: 'DM Mono', monospace;
-    --radius: 12px;
-    --radius-sm: 8px;
-  }
-  html { scroll-behavior: smooth; font-size: 16px; }
-  body {
-    font-family: var(--font-display);
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-  body::before {
-    content: '';
-    position: fixed; inset: 0; z-index: 9999;
-    pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-    background-size: 256px;
-    opacity: 0.6;
-  }
-  .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
-
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 16px 0;
-    background: rgba(10, 10, 12, 0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-subtle);
-  }
-  nav .nav-inner {
-    max-width: 1180px; margin: 0 auto; padding: 0 24px;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .nav-brand {
-    display: flex; align-items: center; gap: 10px;
-    text-decoration: none; color: var(--text);
-  }
-  .nav-logo {
-    width: 36px; height: 36px;
-    background: linear-gradient(135deg, var(--accent), var(--teal));
-    border-radius: var(--radius-sm);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-mono); font-weight: 500; font-size: 14px;
-    color: #fff;
-  }
-  .nav-brand span { font-weight: 600; font-size: 17px; letter-spacing: -0.3px; }
-  .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
-  .nav-links a {
-    color: var(--text-secondary); text-decoration: none;
-    font-size: 14px; font-weight: 400; transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--text); }
-
-  /* HERO HEADER */
-  .legal-hero {
-    padding: 140px 0 60px;
-    border-bottom: 1px solid var(--border-subtle);
-  }
-  .legal-hero .section-label {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 12px; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 2.5px;
-    color: var(--accent-bright);
-    margin-bottom: 16px;
-  }
-  .legal-hero .section-label::before {
-    content: ''; width: 24px; height: 1px; background: var(--accent);
-  }
-  .legal-hero h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    letter-spacing: -1.5px;
-    line-height: 1.15;
-    margin-bottom: 12px;
-  }
-  .legal-hero .meta {
-    font-size: 14px;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-  }
-
-  /* LEGAL CONTENT */
-  .legal-body {
-    padding: 56px 0 100px;
-  }
-  .legal-body p {
-    color: var(--text-secondary);
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 20px;
-    font-weight: 300;
-  }
-  .legal-body h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-top: 48px;
-    margin-bottom: 16px;
-    color: var(--text);
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border-subtle);
-  }
-  .legal-body h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-top: 28px;
-    margin-bottom: 10px;
-    color: var(--text);
-  }
-  .legal-body strong { color: var(--text); font-weight: 600; }
-  .legal-body a {
-    color: var(--accent-bright);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    transition: color 0.2s;
-  }
-  .legal-body a:hover { color: var(--teal); }
-  .legal-body ul, .legal-body ol {
-    margin-bottom: 20px;
-    padding-left: 24px;
-    color: var(--text-secondary);
-  }
-  .legal-body li {
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 8px;
-    font-weight: 300;
-  }
-  .legal-body .placeholder {
-    display: inline;
-    padding: 1px 8px;
-    background: rgba(245, 166, 35, 0.08);
-    border: 1px solid rgba(245, 166, 35, 0.2);
-    border-radius: 4px;
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: #f5a623;
-  }
-
-  /* FOOTER */
-  footer {
-    border-top: 1px solid var(--border-subtle);
-    padding: 48px 0;
-  }
-  footer .footer-inner {
-    max-width: 1180px; margin: 0 auto; padding: 0 24px;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 20px;
-  }
-  .footer-brand {
-    display: flex; align-items: center; gap: 10px;
-    text-decoration: none; color: var(--text);
-  }
-  .footer-brand .nav-logo { width: 28px; height: 28px; font-size: 11px; }
-  .footer-brand span { font-size: 14px; font-weight: 500; color: var(--text-secondary); }
-  .footer-links { display: flex; gap: 28px; list-style: none; }
-  .footer-links a {
-    font-size: 13px; color: var(--text-muted);
-    text-decoration: none; transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--text-secondary); }
-  .footer-copy {
-    font-size: 12px; color: var(--text-muted);
-    font-family: var(--font-mono);
-  }
-
-  @media (max-width: 640px) {
-    .nav-links { display: none; }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -225,7 +36,7 @@
 <section class="legal-body">
   <div class="container">
 
-    <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the JSON Architect application (the "App") operated by <span class="placeholder">[Your Company Name]</span> ("us", "we", "our", or the "Company").</p>
+    <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the JSON Architect application (the "App") operated by Uri Nachmias ("us", "we", "our", or the "Company").</p>
 
     <p>Your access to and use of the App is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all users of the App. By accessing or using the App, you agree to be bound by these Terms. If you disagree with any part of the Terms, you may not access or use the App.</p>
 
@@ -306,10 +117,15 @@
     <h2>12. Governing Law and Dispute Resolution</h2>
 
     <h3>12.1 Governing Law</h3>
-    <p>These Terms shall be governed and construed in accordance with the laws of <span class="placeholder">[Your State/Country]</span>, without regard to its conflict of law provisions.</p>
+    <p>These Terms shall be governed and construed in accordance with the laws of Israel, without regard to its conflict of law provisions.</p>
 
     <h3>12.2 Dispute Resolution</h3>
-    <p>Any dispute arising out of or relating to these Terms or the App shall first be attempted to be resolved through good-faith negotiation. If the dispute cannot be resolved through negotiation within thirty (30) days, either party may pursue resolution through binding arbitration in accordance with the rules of <span class="placeholder">[Arbitration Body]</span>, or through the courts of competent jurisdiction in <span class="placeholder">[Your Jurisdiction]</span>.</p>
+    <p>Any dispute arising out of or relating to these Terms or the App shall first be
+attempted to be resolved through good-faith negotiation. If the dispute cannot
+be resolved within thirty (30) days, it shall be finally resolved by binding
+arbitration in accordance with the Israeli Arbitration Law, 1968. The seat of
+arbitration shall be Tel Aviv, Israel. Judgment on the award may be entered in
+any court of competent jurisdiction.</p>
 
     <h3>12.3 Class Action Waiver</h3>
     <p>You agree that any dispute resolution proceedings will be conducted on an individual basis and not in a class, consolidated, or representative action. You waive any right to participate in a class action lawsuit or class-wide arbitration.</p>
