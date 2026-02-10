@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms and Conditions — JSON Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0c;
+    --bg-elevated: #111115;
+    --bg-card: #16161b;
+    --surface: #1c1c23;
+    --border: #2a2a35;
+    --border-subtle: #1f1f28;
+    --text: #e8e6f0;
+    --text-secondary: #8b89a0;
+    --text-muted: #5c5a6e;
+    --accent: #7c6aff;
+    --accent-bright: #9580ff;
+    --accent-glow: rgba(124, 106, 255, 0.15);
+    --green: #3dd68c;
+    --teal: #5ec4c8;
+    --font-display: 'Outfit', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: var(--font-display);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 256px;
+    opacity: 0.6;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 0;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  nav .nav-inner {
+    max-width: 1180px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--text);
+  }
+  .nav-logo {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--accent), var(--teal));
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-weight: 500; font-size: 14px;
+    color: #fff;
+  }
+  .nav-brand span { font-weight: 600; font-size: 17px; letter-spacing: -0.3px; }
+  .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+  .nav-links a {
+    color: var(--text-secondary); text-decoration: none;
+    font-size: 14px; font-weight: 400; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO HEADER */
+  .legal-hero {
+    padding: 140px 0 60px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .legal-hero .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 2.5px;
+    color: var(--accent-bright);
+    margin-bottom: 16px;
+  }
+  .legal-hero .section-label::before {
+    content: ''; width: 24px; height: 1px; background: var(--accent);
+  }
+  .legal-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .legal-hero .meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  /* LEGAL CONTENT */
+  .legal-body {
+    padding: 56px 0 100px;
+  }
+  .legal-body p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .legal-body h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    color: var(--text);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .legal-body h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-top: 28px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .legal-body strong { color: var(--text); font-weight: 600; }
+  .legal-body a {
+    color: var(--accent-bright);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+  .legal-body a:hover { color: var(--teal); }
+  .legal-body ul, .legal-body ol {
+    margin-bottom: 20px;
+    padding-left: 24px;
+    color: var(--text-secondary);
+  }
+  .legal-body li {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    font-weight: 300;
+  }
+  .legal-body .placeholder {
+    display: inline;
+    padding: 1px 8px;
+    background: rgba(245, 166, 35, 0.08);
+    border: 1px solid rgba(245, 166, 35, 0.2);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: #f5a623;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 48px 0;
+  }
+  footer .footer-inner {
+    max-width: 1180px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .footer-brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--text);
+  }
+  .footer-brand .nav-logo { width: 28px; height: 28px; font-size: 11px; }
+  .footer-brand span { font-size: 14px; font-weight: 500; color: var(--text-secondary); }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a {
+    font-size: 13px; color: var(--text-muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text-secondary); }
+  .footer-copy {
+    font-size: 12px; color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="landing.html" class="nav-brand">
+      <div class="nav-logo">{ }</div>
+      <span>JSON Architect</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="landing.html">Home</a></li>
+      <li><a href="terms.html" style="color:var(--text)">Terms</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="legal-hero">
+  <div class="container">
+    <div class="section-label">Legal</div>
+    <h1>Terms and Conditions</h1>
+    <span class="meta">Effective Date: February 8, 2026</span>
+  </div>
+</section>
+
+<section class="legal-body">
+  <div class="container">
+
+    <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the JSON Architect application (the "App") operated by <span class="placeholder">[Your Company Name]</span> ("us", "we", "our", or the "Company").</p>
+
+    <p>Your access to and use of the App is conditioned upon your acceptance of and compliance with these Terms. These Terms apply to all users of the App. By accessing or using the App, you agree to be bound by these Terms. If you disagree with any part of the Terms, you may not access or use the App.</p>
+
+    <h2>1. Definitions</h2>
+    <p><strong>"App"</strong> means the JSON Architect application, including all versions for macOS, iPadOS, iOS, and any future platforms.</p>
+    <p><strong>"Content"</strong> means any data, text, JSON files, scripts, or other materials that you input, upload, create, modify, or process using the App.</p>
+    <p><strong>"Services"</strong> means all features and functionality provided by the App, including but not limited to JSON validation, formatting, minification, tree view visualization, script execution, file editing, find and replace, and drag-and-drop reordering.</p>
+    <p><strong>"User" or "you"</strong> means any individual or entity that accesses or uses the App.</p>
+
+    <h2>2. License Grant</h2>
+
+    <h3>2.1 Limited License</h3>
+    <p>Subject to your compliance with these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to download, install, and use the App on devices that you own or control, solely for your personal or internal business purposes.</p>
+
+    <h3>2.2 License Restrictions</h3>
+    <p>You shall not: (a) copy, modify, or distribute the App or any portion thereof; (b) reverse engineer, disassemble, decompile, or attempt to derive the source code of the App; (c) sell, rent, lease, sublicense, or otherwise transfer your rights to the App; (d) remove, alter, or obscure any proprietary notices, labels, or marks on the App; (e) use the App for any unlawful purpose or in violation of any applicable laws or regulations; or (f) use the App to develop a competing product or service.</p>
+
+    <h3>2.3 Open-Source Components</h3>
+    <p>The App may include open-source software components, each of which is subject to its own license. Nothing in these Terms limits your rights under, or grants you rights that supersede, the terms and conditions of any applicable open-source license.</p>
+
+    <h2>3. User Content and Data</h2>
+
+    <h3>3.1 Ownership of Your Content</h3>
+    <p>You retain all right, title, and interest in and to any Content that you input, upload, or process through the App. We do not claim any ownership rights over your Content.</p>
+
+    <h3>3.2 Local Processing</h3>
+    <p>The App processes all Content locally on your device. Your JSON data, scripts, and files are not transmitted to our servers or any third-party servers during normal use of the App. All validation, formatting, parsing, tree visualization, and script execution operations occur entirely on your device.</p>
+
+    <h3>3.3 User Responsibility</h3>
+    <p>You are solely responsible for your Content and any consequences of processing it through the App. You represent and warrant that: (a) you own or have the necessary rights and permissions to use and process your Content; (b) your Content does not violate any third-party rights; and (c) your Content complies with all applicable laws and regulations.</p>
+
+    <h3>3.4 Script Execution</h3>
+    <p>The App provides the ability to execute JavaScript scripts on your JSON data via JavaScriptCore. You acknowledge that: (a) scripts are executed locally in a sandboxed environment on your device; (b) you are solely responsible for any scripts you write, modify, or execute; (c) we are not liable for any damage or data loss resulting from script execution; and (d) you should exercise caution when running scripts from untrusted sources.</p>
+
+    <h2>4. Intellectual Property</h2>
+
+    <h3>4.1 Our Intellectual Property</h3>
+    <p>The App, including its design, code, features, graphics, user interface, and documentation, is owned by us and is protected by copyright, trademark, and other intellectual property laws. These Terms do not grant you any rights to use our trademarks, trade names, service marks, or logos.</p>
+
+    <h3>4.2 Feedback</h3>
+    <p>If you provide us with any feedback, suggestions, or ideas regarding the App ("Feedback"), you grant us a worldwide, royalty-free, fully paid-up, non-exclusive, perpetual, and irrevocable license to use, reproduce, modify, distribute, and otherwise exploit the Feedback for any purpose without restriction or compensation to you.</p>
+
+    <h2>5. App Store Terms</h2>
+    <p>If you downloaded the App from the Apple App Store, you acknowledge and agree that: (a) these Terms are between you and us, not Apple; (b) Apple has no obligation to provide maintenance or support for the App; (c) in the event of any failure of the App to conform to any applicable warranty, your sole remedy is a refund of the purchase price (if any) as provided by Apple's App Store policies; (d) Apple is not responsible for any claims relating to the App, including product liability claims, consumer protection claims, or intellectual property infringement claims; and (e) Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</p>
+
+    <h2>6. Updates and Modifications</h2>
+
+    <h3>6.1 App Updates</h3>
+    <p>We may from time to time release updates, upgrades, patches, or new versions of the App. These updates may include bug fixes, feature enhancements, performance improvements, or changes to functionality. Updates may be installed automatically or may require your action, depending on your device settings.</p>
+
+    <h3>6.2 Changes to Terms</h3>
+    <p>We reserve the right to modify or replace these Terms at any time at our sole discretion. If we make material changes, we will notify you by updating the "Effective Date" at the top of these Terms and, where possible, through an in-app notification. Your continued use of the App after any such changes constitutes your acceptance of the new Terms.</p>
+
+    <h2>7. Subscription and Payments</h2>
+    <p>The App may be offered as a free application, a one-time purchase, or on a subscription basis. If the App or any features thereof require payment: (a) all fees are stated in the applicable app store listing; (b) payments are processed through the Apple App Store; (c) subscription renewals are managed through your App Store account settings; and (d) refunds are subject to the policies of the applicable app store.</p>
+
+    <h2>8. Disclaimers</h2>
+
+    <h3>8.1 "As Is" Basis</h3>
+    <p>THE APP IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.</p>
+
+    <h3>8.2 No Warranty of Accuracy</h3>
+    <p>WE DO NOT WARRANT THAT: (A) THE APP WILL MEET YOUR REQUIREMENTS; (B) THE APP WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE; (C) THE RESULTS OBTAINED FROM THE USE OF THE APP WILL BE ACCURATE OR RELIABLE; OR (D) ANY ERRORS IN THE APP WILL BE CORRECTED. YOU ACKNOWLEDGE THAT THE APP IS A DEVELOPER TOOL AND SHOULD NOT BE RELIED UPON AS THE SOLE MEANS OF VALIDATING JSON DATA FOR PRODUCTION OR MISSION-CRITICAL SYSTEMS.</p>
+
+    <h3>8.3 Data Loss</h3>
+    <p>We are not responsible for any loss of data, corruption of files, or any other damage to your Content that may result from the use of the App. You are solely responsible for maintaining backup copies of your Content.</p>
+
+    <h2>9. Limitation of Liability</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE COMPANY, ITS AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, OR LICENSORS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO DAMAGES FOR LOSS OF PROFITS, GOODWILL, DATA, OR OTHER INTANGIBLE LOSSES, RESULTING FROM: (A) YOUR ACCESS TO OR USE OF (OR INABILITY TO ACCESS OR USE) THE APP; (B) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY; (C) ANY CONTENT OBTAINED FROM THE APP; OR (D) UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, WHETHER OR NOT WE HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+    <p>OUR TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING FROM OR RELATING TO THE APP SHALL NOT EXCEED THE AMOUNT YOU PAID US TO USE THE APP IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM, OR TEN DOLLARS ($10.00 USD), WHICHEVER IS GREATER.</p>
+
+    <h2>10. Indemnification</h2>
+    <p>You agree to defend, indemnify, and hold harmless the Company and its affiliates, officers, directors, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable attorneys' fees) arising from: (a) your use of the App; (b) your violation of these Terms; (c) your violation of any third-party rights; or (d) your Content.</p>
+
+    <h2>11. Termination</h2>
+    <p>We may terminate or suspend your access to the App immediately, without prior notice or liability, for any reason whatsoever, including but not limited to a breach of these Terms. Upon termination, your right to use the App will immediately cease. All provisions of these Terms that by their nature should survive termination shall survive, including but not limited to ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+
+    <h2>12. Governing Law and Dispute Resolution</h2>
+
+    <h3>12.1 Governing Law</h3>
+    <p>These Terms shall be governed and construed in accordance with the laws of <span class="placeholder">[Your State/Country]</span>, without regard to its conflict of law provisions.</p>
+
+    <h3>12.2 Dispute Resolution</h3>
+    <p>Any dispute arising out of or relating to these Terms or the App shall first be attempted to be resolved through good-faith negotiation. If the dispute cannot be resolved through negotiation within thirty (30) days, either party may pursue resolution through binding arbitration in accordance with the rules of <span class="placeholder">[Arbitration Body]</span>, or through the courts of competent jurisdiction in <span class="placeholder">[Your Jurisdiction]</span>.</p>
+
+    <h3>12.3 Class Action Waiver</h3>
+    <p>You agree that any dispute resolution proceedings will be conducted on an individual basis and not in a class, consolidated, or representative action. You waive any right to participate in a class action lawsuit or class-wide arbitration.</p>
+
+    <h2>13. Export Compliance</h2>
+    <p>You represent and warrant that you are not located in a country that is subject to a U.S. Government embargo, or that has been designated by the U.S. Government as a "terrorist supporting" country, and that you are not listed on any U.S. Government list of prohibited or restricted parties.</p>
+
+    <h2>14. Children's Use</h2>
+    <p>The App is not directed at children under the age of 13 (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal information from children. If you are a parent or guardian and you become aware that your child has provided us with personal information, please contact us.</p>
+
+    <h2>15. Severability</h2>
+    <p>If any provision of these Terms is held to be invalid or unenforceable by a court of competent jurisdiction, the remaining provisions shall remain in full force and effect. The invalid or unenforceable provision shall be modified to the minimum extent necessary to make it valid and enforceable while preserving the intent of the original provision.</p>
+
+    <h2>16. Entire Agreement</h2>
+    <p>These Terms, together with our <a href="privacy.html">Privacy Policy</a>, constitute the entire agreement between you and us regarding the App and supersede all prior and contemporaneous agreements, proposals, or representations, whether written or oral, concerning the App.</p>
+
+    <h2>17. Contact Information</h2>
+    <p>If you have any questions about these Terms, please contact us at:</p>
+    <p>
+      <span class="placeholder">[Your Company Name]</span><br>
+      <span class="placeholder">[Your Address]</span><br>
+      Email: <span class="placeholder">[<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff86908a8dd29a929e9693bf9a879e928f939ad19c9092">[email&#160;protected]</a>]</span><br>
+      <span class="placeholder">[Your Website URL]</span>
+    </p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="landing.html" class="footer-brand">
+      <div class="nav-logo">{ }</div>
+      <span>JSON Architect</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="landing.html">Home</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html

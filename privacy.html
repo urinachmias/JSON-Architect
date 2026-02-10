@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — JSON Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0c;
+    --bg-elevated: #111115;
+    --bg-card: #16161b;
+    --surface: #1c1c23;
+    --border: #2a2a35;
+    --border-subtle: #1f1f28;
+    --text: #e8e6f0;
+    --text-secondary: #8b89a0;
+    --text-muted: #5c5a6e;
+    --accent: #7c6aff;
+    --accent-bright: #9580ff;
+    --accent-glow: rgba(124, 106, 255, 0.15);
+    --green: #3dd68c;
+    --teal: #5ec4c8;
+    --font-display: 'Outfit', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: var(--font-display);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 9999;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-size: 256px;
+    opacity: 0.6;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px 0;
+    background: rgba(10, 10, 12, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  nav .nav-inner {
+    max-width: 1180px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--text);
+  }
+  .nav-logo {
+    width: 36px; height: 36px;
+    background: linear-gradient(135deg, var(--accent), var(--teal));
+    border-radius: var(--radius-sm);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-weight: 500; font-size: 14px;
+    color: #fff;
+  }
+  .nav-brand span { font-weight: 600; font-size: 17px; letter-spacing: -0.3px; }
+  .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+  .nav-links a {
+    color: var(--text-secondary); text-decoration: none;
+    font-size: 14px; font-weight: 400; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* HERO HEADER */
+  .legal-hero {
+    padding: 140px 0 60px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .legal-hero .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 2.5px;
+    color: var(--accent-bright);
+    margin-bottom: 16px;
+  }
+  .legal-hero .section-label::before {
+    content: ''; width: 24px; height: 1px; background: var(--accent);
+  }
+  .legal-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .legal-hero .meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  /* LEGAL CONTENT */
+  .legal-body {
+    padding: 56px 0 100px;
+  }
+  .legal-body p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  .legal-body h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    color: var(--text);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .legal-body h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-top: 28px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  .legal-body strong { color: var(--text); font-weight: 600; }
+  .legal-body a {
+    color: var(--accent-bright);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+  .legal-body a:hover { color: var(--teal); }
+  .legal-body ul, .legal-body ol {
+    margin-bottom: 20px;
+    padding-left: 24px;
+    color: var(--text-secondary);
+  }
+  .legal-body li {
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    font-weight: 300;
+  }
+  .legal-body .placeholder {
+    display: inline;
+    padding: 1px 8px;
+    background: rgba(245, 166, 35, 0.08);
+    border: 1px solid rgba(245, 166, 35, 0.2);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: #f5a623;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border-subtle);
+    padding: 48px 0;
+  }
+  footer .footer-inner {
+    max-width: 1180px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .footer-brand {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--text);
+  }
+  .footer-brand .nav-logo { width: 28px; height: 28px; font-size: 11px; }
+  .footer-brand span { font-size: 14px; font-weight: 500; color: var(--text-secondary); }
+  .footer-links { display: flex; gap: 28px; list-style: none; }
+  .footer-links a {
+    font-size: 13px; color: var(--text-muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--text-secondary); }
+  .footer-copy {
+    font-size: 12px; color: var(--text-muted);
+    font-family: var(--font-mono);
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="landing.html" class="nav-brand">
+      <div class="nav-logo">{ }</div>
+      <span>JSON Architect</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="landing.html">Home</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html" style="color:var(--text)">Privacy</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="legal-hero">
+  <div class="container">
+    <div class="section-label">Legal</div>
+    <h1>Privacy Policy</h1>
+    <span class="meta">Effective Date: February 8, 2026</span>
+  </div>
+</section>
+
+<section class="legal-body">
+  <div class="container">
+
+    <p>This Privacy Policy describes how <span class="placeholder">[Your Company Name]</span> ("us", "we", "our", or the "Company") collects, uses, discloses, and protects information when you use the JSON Architect application (the "App"). We are committed to protecting your privacy and being transparent about our data practices.</p>
+
+    <p>By using the App, you agree to the collection, use, and disclosure of information in accordance with this Privacy Policy. If you do not agree with the practices described in this Privacy Policy, please do not use the App.</p>
+
+    <h2>1. Information We Collect</h2>
+
+    <h3>1.1 Information You Provide</h3>
+    <p>The App is designed as a local-processing tool. Currently, we do not require you to create an account, provide personal information, or register to use the App. Any JSON data, scripts, or files you work with are processed entirely on your device and are not transmitted to us.</p>
+
+    <h3>1.2 Automatically Collected Information</h3>
+    <p>We may collect certain information automatically when you use the App, including:</p>
+    <p><strong>Device Information:</strong> Device model, operating system version, unique device identifiers, hardware specifications, and device settings relevant to the App's performance.</p>
+    <p><strong>Usage Data:</strong> Information about how you interact with the App, including features used, session duration, frequency of use, crash reports, performance data, and interaction patterns.</p>
+    <p><strong>Diagnostic Data:</strong> Error logs, crash reports, and performance metrics that help us identify and fix technical issues.</p>
+    <p><strong>App Store Data:</strong> Information provided by the Apple App Store, such as download date, purchase information, and subscription status.</p>
+    <p>Please note: As of the effective date of this Privacy Policy, we do not actively collect any of the above information. However, we reserve the right to implement analytics, diagnostics, or other data collection features in future updates to improve the App. Any such changes will be reflected in an updated Privacy Policy, and we will notify you of material changes.</p>
+
+    <h3>1.3 Information We Do NOT Collect</h3>
+    <p>We want to be clear about what we do not collect:</p>
+    <p><strong>Your JSON Data:</strong> All JSON content you input, validate, format, parse, or edit remains on your device. We do not access, transmit, store, or process your JSON data on any external server.</p>
+    <p><strong>Your Scripts:</strong> Any JavaScript scripts you create, edit, or execute within the App remain on your device.</p>
+    <p><strong>Your Files:</strong> Any files you open, save, import, or export through the App remain on your device and under your control.</p>
+    <p><strong>Location Data:</strong> We do not collect precise or approximate location data.</p>
+    <p><strong>Contacts or Calendar Data:</strong> We do not access your contacts, calendar, or other personal data stored on your device.</p>
+
+    <h2>2. How We Use Information</h2>
+    <p>If and when we collect information, we may use it for the following purposes:</p>
+    <p><strong>App Improvement:</strong> To understand how the App is used, identify popular features, and prioritize development efforts.</p>
+    <p><strong>Bug Fixes and Performance:</strong> To identify, diagnose, and fix technical issues, crashes, and performance problems.</p>
+    <p><strong>Analytics:</strong> To analyze usage trends and patterns to improve user experience and app design.</p>
+    <p><strong>Communications:</strong> To send you important notices about the App, such as updates, security alerts, or changes to our policies (if you have opted in to receive such communications).</p>
+    <p><strong>Legal Compliance:</strong> To comply with applicable laws, regulations, legal processes, or enforceable governmental requests.</p>
+    <p><strong>Advertising:</strong> We may in the future use collected information to deliver relevant advertising within the App or through third-party advertising networks. If we implement advertising, we will update this Privacy Policy and provide appropriate opt-out mechanisms.</p>
+
+    <h2>3. Data Sharing and Disclosure</h2>
+    <p>We do not sell your personal information. We may share information in the following circumstances:</p>
+
+    <h3>3.1 Service Providers</h3>
+    <p>We may share information with third-party service providers who perform services on our behalf, such as analytics, crash reporting, cloud infrastructure, and customer support. These providers are contractually obligated to use your information only for the purposes of providing services to us and to maintain appropriate security measures.</p>
+
+    <h3>3.2 Analytics Partners</h3>
+    <p>We may use third-party analytics services (such as Firebase Analytics, Mixpanel, Amplitude, or similar tools) to help us understand App usage. These analytics partners may collect information about your use of the App using technologies such as device identifiers and usage events.</p>
+
+    <h3>3.3 Advertising Partners</h3>
+    <p>In the future, we may partner with third-party advertising networks to display advertisements within the App. If implemented, these partners may collect and use certain information for the purpose of delivering targeted advertisements. We will update this Privacy Policy prior to implementing any advertising features.</p>
+
+    <h3>3.4 Legal Requirements</h3>
+    <p>We may disclose information if required to do so by law or in the good faith belief that such action is necessary to: (a) comply with a legal obligation; (b) protect and defend our rights or property; (c) prevent or investigate possible wrongdoing; (d) protect the personal safety of users or the public; or (e) protect against legal liability.</p>
+
+    <h3>3.5 Business Transfers</h3>
+    <p>If we are involved in a merger, acquisition, reorganization, bankruptcy, or sale of all or a portion of our assets, your information may be transferred as part of that transaction. We will notify you of any such change in ownership or control of your information.</p>
+
+    <h2>4. Data Storage and Security</h2>
+
+    <h3>4.1 Local Storage</h3>
+    <p>The App stores your preferences, recent documents, and saved scripts locally on your device using standard platform storage mechanisms (such as UserDefaults on Apple platforms). This data remains on your device and is not transmitted to external servers.</p>
+
+    <h3>4.2 Security Measures</h3>
+    <p>We implement appropriate technical and organizational measures to protect information from unauthorized access, alteration, disclosure, or destruction. However, no method of electronic storage or transmission is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security.</p>
+
+    <h3>4.3 Data Retention</h3>
+    <p>If we collect information in the future, we will retain it only for as long as necessary to fulfill the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law. When information is no longer needed, we will delete or anonymize it.</p>
+
+    <h2>5. Your Rights and Choices</h2>
+
+    <h3>5.1 General Rights</h3>
+    <p>Depending on your jurisdiction, you may have the following rights regarding your personal information:</p>
+    <p><strong>Right of Access:</strong> You may request information about what personal data we hold about you.</p>
+    <p><strong>Right to Rectification:</strong> You may request that we correct inaccurate or incomplete personal data.</p>
+    <p><strong>Right to Deletion:</strong> You may request that we delete your personal data (also known as the "right to be forgotten").</p>
+    <p><strong>Right to Restrict Processing:</strong> You may request that we restrict the processing of your personal data.</p>
+    <p><strong>Right to Data Portability:</strong> You may request a copy of your personal data in a structured, commonly used, and machine-readable format.</p>
+    <p><strong>Right to Object:</strong> You may object to the processing of your personal data for certain purposes.</p>
+    <p><strong>Right to Withdraw Consent:</strong> Where processing is based on your consent, you may withdraw your consent at any time.</p>
+
+    <h3>5.2 Exercising Your Rights</h3>
+    <p>To exercise any of these rights, please contact us using the information provided in the "Contact Us" section below. We will respond to your request within the timeframe required by applicable law (typically 30 days for GDPR, 45 days for CCPA).</p>
+
+    <h3>5.3 Opt-Out Mechanisms</h3>
+    <p>If we implement analytics or advertising in the future, we will provide clear opt-out mechanisms, which may include: in-app settings to disable data collection, compliance with platform-level opt-out signals (such as Apple's App Tracking Transparency framework), and honoring "Do Not Track" or similar browser/device signals.</p>
+
+    <h2>6. International Data Transfers</h2>
+    <p>If we transfer information to countries outside your jurisdiction in the future, we will ensure that appropriate safeguards are in place to protect your information in accordance with applicable data protection laws. These safeguards may include Standard Contractual Clauses approved by the European Commission, adequacy decisions, or other lawful transfer mechanisms.</p>
+
+    <h2>7. Compliance with Specific Privacy Laws</h2>
+
+    <h3>7.1 General Data Protection Regulation (GDPR)</h3>
+    <p>If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, you have certain rights under the GDPR. Our legal bases for processing personal data include consent, legitimate interests (such as improving the App), and compliance with legal obligations. You may lodge a complaint with your local data protection authority if you believe we have not complied with applicable data protection laws.</p>
+
+    <h3>7.2 California Consumer Privacy Act (CCPA/CPRA)</h3>
+    <p>If you are a California resident, you have rights under the CCPA/CPRA, including the right to know what personal information we collect, the right to delete personal information, the right to opt out of the sale or sharing of personal information, and the right to non-discrimination for exercising your privacy rights. We do not sell personal information, as defined under the CCPA.</p>
+
+    <h3>7.3 Children's Online Privacy Protection Act (COPPA)</h3>
+    <p>The App is not directed at children under 13 years of age (or the applicable minimum age in your jurisdiction). We do not knowingly collect personal information from children. If we learn that we have collected personal information from a child, we will promptly take steps to delete that information. If you believe a child has provided us with personal information, please contact us.</p>
+
+    <h3>7.4 Other Jurisdictions</h3>
+    <p>We are committed to complying with applicable privacy laws in all jurisdictions where the App is available. If you have specific questions about how your local laws apply, please contact us.</p>
+
+    <h2>8. Third-Party Services and Links</h2>
+    <p>The App may contain links to or integrations with third-party services, websites, or applications. This Privacy Policy does not apply to third-party services, and we are not responsible for the privacy practices of those services. We encourage you to review the privacy policies of any third-party services before providing them with your information.</p>
+
+    <h2>9. Cookies and Tracking Technologies</h2>
+    <p>As a native application, the App does not use browser cookies. However, if we implement analytics or advertising in the future, we may use device identifiers, SDKs, or similar technologies to collect information about App usage. We will update this Privacy Policy to reflect any such implementation and provide relevant opt-out mechanisms.</p>
+
+    <h2>10. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you of any material changes by: (a) updating the "Effective Date" at the top of this Privacy Policy; (b) posting a notice within the App; or (c) sending you a notification, where appropriate. We encourage you to review this Privacy Policy periodically. Your continued use of the App after any changes to this Privacy Policy constitutes your acceptance of those changes.</p>
+
+    <h2>11. Data Protection Officer</h2>
+    <p>If required by applicable law, we will appoint a Data Protection Officer (DPO) to oversee compliance with data protection regulations. You can reach our DPO (or privacy team) at the contact information provided below.</p>
+
+    <h2>12. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
+    <p>
+      <span class="placeholder">[Your Company Name]</span><br>
+      <span class="placeholder">[Your Address]</span><br>
+      Email: <span class="placeholder">[your-email@example.com]</span><br>
+      <span class="placeholder">[Your Website URL]</span>
+    </p>
+    <p>For privacy-related inquiries, please include "Privacy" in your subject line to ensure prompt handling.</p>
+    <p>If you are not satisfied with our response, you may have the right to lodge a complaint with your local data protection authority.</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="landing.html" class="footer-brand">
+      <div class="nav-logo">{ }</div>
+      <span>JSON Architect</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="landing.html">Home</a></li>
+      <li><a href="terms.html">Terms</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 JSON Architect</span>
+  </div>
+</footer>
+
+</body>
+</html>
